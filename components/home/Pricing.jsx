@@ -3,7 +3,7 @@ import ScrollAnimation from '../ui/ScrollAnimation';
 
 export default function Pricing() {
   return (
-    <section className="flex justify-center w-full bg-gradient-to-b from-[#F8FAFF] to-[#F0FDF4] py-[100px]" id="precos">
+    <section className="flex justify-center w-full bg-gradient-to-b from-[#FDF2F8] to-[#F0F9FF] py-[100px]" id="precos">
       <div className="w-[1200px] px-[45px]">
         {/* Header */}
         <ScrollAnimation className="text-center mb-[60px]">

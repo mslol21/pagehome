@@ -2,7 +2,7 @@ import ScrollAnimation from '../ui/ScrollAnimation';
 
 export default function Differentials() {
   return (
-    <section className="bg-gradient-to-b from-[#F8FAFF] to-[#F0F4FF] py-[100px] flex justify-center w-full" id="como-funciona">
+    <section className="bg-gradient-to-b from-[#EFF6FF] to-[#F5F3FF] py-[100px] flex justify-center w-full" id="como-funciona">
       <div className="max-w-[1200px] w-full px-[24px] md:px-[142px]">
         <ScrollAnimation className="text-center mb-[60px]">
           <div className="inline-flex items-center gap-2 text-[#0066FF] mb-5">

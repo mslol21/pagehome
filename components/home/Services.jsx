@@ -2,7 +2,7 @@ import ScrollAnimation from '../ui/ScrollAnimation';
 
 export default function Services() {
   return (
-    <section className="bg-gradient-to-b from-[#F0F4FF] to-[#F5F3FF] py-[100px] flex justify-center w-full" id="beneficios">
+    <section className="bg-gradient-to-b from-[#F5F3FF] to-[#F0FDF4] py-[100px] flex justify-center w-full" id="beneficios">
       <div className="max-w-[1200px] w-full px-[49px]">
         
         {/* Main Card Container */}

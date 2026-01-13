@@ -3,9 +3,9 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer className="w-full bg-[#050505] text-white overflow-hidden relative" style={{ height: '603px' }}>
-+      {/* Top transition mask */}
-+      <div className="absolute top-0 left-0 right-0 h-[100px] bg-gradient-to-b from-white to-transparent pointer-events-none z-0 opacity-10" />
-+
+      {/* Top transition mask */}
+      <div className="absolute top-0 left-0 right-0 h-[150px] bg-gradient-to-b from-white to-transparent pointer-events-none z-0 opacity-20" />
+
       <div className="w-full h-full max-w-[1200px] mx-auto relative hidden md:block">
         
         {/* Logo - Top: 57px, Left: 48px */}

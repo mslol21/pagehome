@@ -3,7 +3,10 @@ import ScrollAnimation from '../ui/ScrollAnimation';
 
 export default function CTA() {
   return (
-    <section className="py-[100px] flex justify-center px-5 bg-gradient-to-b from-[#F8FAFF] to-white" id="contato">
+    <section className="py-[100px] flex justify-center px-5 bg-gradient-to-b from-[#EEF2FF] to-white relative overflow-hidden" id="contato">
++      {/* Bottom transition mask for Footer */}
++      <div className="absolute bottom-0 left-0 right-0 h-[150px] bg-gradient-to-t from-[#050505] to-transparent pointer-events-none opacity-20" />
++
       <div id="demo" className="absolute -top-20" />
       <ScrollAnimation className="w-full max-w-[1200px] h-auto md:h-[579px] bg-[#E8F0FF] rounded-[40px] relative overflow-hidden flex items-center">
         {/* Content Container */}

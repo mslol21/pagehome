@@ -2,7 +2,7 @@ import ScrollAnimation from '../ui/ScrollAnimation';
 
 export default function Features() {
   return (
-    <section className="bg-gradient-to-b from-white to-[#F8FAFF] py-[100px] flex justify-center w-full">
+    <section className="bg-gradient-to-b from-[#F8FAFF] to-[#EFF6FF] py-[100px] flex justify-center w-full">
       <div className="max-w-[1200px] w-full px-5">
         <ScrollAnimation delay={0.2}>
           <div className="text-center mb-[60px]">
