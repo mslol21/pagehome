@@ -9,7 +9,7 @@ export default function Header() {
   const toggleMenu = () => setMobileMenuOpen(!mobileMenuOpen);
 
   return (
-    <header className="bg-[#F8F8FEE0] sticky top-0 z-[100] border-b border-transparent">
+    <header className="bg-white/70 backdrop-blur-md sticky top-0 z-[100] border-b border-gray-100/50">
       {/* Container with exact padding and max-width as requested */}
       <div className="max-w-[1200px] mx-auto flex justify-between items-center py-[20px] px-[20px] md:py-[40px] md:px-[48px]">
         
