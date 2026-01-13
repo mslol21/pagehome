@@ -2,7 +2,13 @@ import ScrollAnimation from '../ui/ScrollAnimation';
 
 export default function Institutional() {
   return (
-    <section className="bg-[#1a1a1a] py-[60px] flex justify-center w-full relative overflow-hidden">
+    <section className="bg-[#1a1a1a] py-[100px] flex justify-center w-full relative overflow-hidden">
+      {/* Top transition mask */}
+      <div className="absolute top-0 left-0 right-0 h-[100px] bg-gradient-to-b from-[#F5F3FF] to-transparent pointer-events-none" />
+
+      {/* Bottom transition mask */}
+      <div className="absolute bottom-0 left-0 right-0 h-[100px] bg-gradient-to-t from-[#ECFEFF] to-transparent pointer-events-none" />
+
       {/* Background Gradient simulating the "lights" from the bottom */}
       <div className="absolute bottom-[-100px] left-1/2 -translate-x-1/2 w-[80%] h-[200px] bg-[#0066FF] opacity-20 blur-[120px] pointer-events-none" />
 

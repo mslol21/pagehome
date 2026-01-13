@@ -3,7 +3,7 @@ import ScrollAnimation from '../ui/ScrollAnimation';
 
 export default function Hero() {
   return (
-    <section className="flex justify-center px-5 py-5 bg-white" id="home">
+    <section className="flex justify-center px-5 py-[60px] bg-gradient-to-b from-white to-[#F8FAFF]" id="home">
       <ScrollAnimation className="max-w-[1200px] w-full bg-[#E8F0FF] rounded-[40px] px-[24px] md:px-[48px] pt-[40px] md:pt-[10px] pb-[60px] flex flex-col md:flex-row items-center gap-10 md:h-[683px] relative overflow-hidden">
         
         {/* Left Content */}

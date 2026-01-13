@@ -34,7 +34,7 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="flex justify-center w-full bg-[#f8f8fe] py-[60px]" id="faq">
+    <section className="flex justify-center w-full bg-gradient-to-b from-[#F0FDF4] to-[#F8FAFF] py-[100px]" id="faq">
       <div className="w-[1200px] px-[45px] grid md:grid-cols-2 gap-[60px]">
         
         {/* Left Side */}

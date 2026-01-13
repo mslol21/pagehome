@@ -2,7 +2,7 @@ import ScrollAnimation from '../ui/ScrollAnimation';
 
 export default function Comparison() {
   return (
-    <section className="bg-[#F8F8FE] py-[60px] flex justify-center w-full" id="comparativo">
+    <section className="bg-gradient-to-b from-[#ECFEFF] to-[#F8FAFF] py-[100px] flex justify-center w-full" id="comparativo">
       <div className="max-w-[1200px] w-full px-[45px]">
         
         <ScrollAnimation className="text-center mb-[60px]">
