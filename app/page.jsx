@@ -1,4 +1,4 @@
-import Header from "@/components/home/Header";
+import Header from "@/components/layout/Header";
 import Hero from "@/components/home/Hero";
 import Institutional from "@/components/home/Institutional";
 import Services from "@/components/home/Services";
@@ -8,7 +8,7 @@ import Comparison from "@/components/home/Comparison";
 import Pricing from "@/components/home/Pricing";
 import FAQ from "@/components/home/FAQ";
 import CTA from "@/components/home/CTA";
-import Footer from "@/components/home/Footer";
+import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (

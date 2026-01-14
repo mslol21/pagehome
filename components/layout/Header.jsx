@@ -44,6 +44,16 @@ export default function Header() {
              <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
              </svg>
+             
+             {/* Dropdown Menu */}
+             <div className="absolute top-full left-0 mt-2 bg-white rounded-xl shadow-lg border border-gray-100 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 min-w-[200px]">
+                <Link href="/comparacao" className="block px-4 py-2 text-sm text-[#4a5568] hover:bg-[#F0F7FF] hover:text-[#0066FF] transition-colors">
+                  Comparação
+                </Link>
+                <Link href="/assinatura" className="block px-4 py-2 text-sm text-[#4a5568] hover:bg-[#F0F7FF] hover:text-[#0066FF] transition-colors">
+                  Assinatura
+                </Link>
+             </div>
           </div>
         </nav>
 
@@ -93,6 +103,20 @@ export default function Header() {
               {item}
             </Link>
           ))}
+          <Link
+            href="/comparacao"
+            className="text-[#1a1a1a] font-medium py-2 border-b border-gray-50 text-[18px]"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Comparação
+          </Link>
+          <Link 
+            href="/assinatura" 
+            className="text-[#1a1a1a] font-medium py-2 border-b border-gray-100 text-[18px]"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Assinatura
+          </Link>
           <div className="flex flex-col gap-3 mt-2">
              <Link
               href="#contato"
