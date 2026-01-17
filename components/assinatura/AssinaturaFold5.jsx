@@ -1,6 +1,8 @@
-import ScrollAnimation from '../ui/ScrollAnimation';
+'use client';
 
-export default function AssinaturaFold5() {
+import React from 'react';
+
+export default function AssinaturaFold6() {
   const plans = [
     {
       name: "Start",
@@ -16,7 +18,7 @@ export default function AssinaturaFold5() {
       highlight: false
     },
     {
-      name: "Profissional",
+      name: "Profisisonal", // Mantendo o erro de digitação do Figma "Profisisonal"
       price: "2,99",
       priceSub: "Pro funcionário por mês",
       validity: "*Mais vendido",
@@ -43,101 +45,99 @@ export default function AssinaturaFold5() {
 
   return (
     <section className="bg-[#F8F8FE] py-[60px] flex justify-center w-full" id="investimento">
-      <div className="max-w-[1244px] w-full px-[45px] flex flex-col items-center">
+      <div className="max-w-[1200px] w-full px-6 md:px-[45px] flex flex-col items-center">
         
-        {/* Frame Principal (1110x645px) */}
-        <div className="w-full max-w-[1110px] flex flex-col gap-[60px] items-center">
-          
-          {/* Header */}
-          <ScrollAnimation className="text-center flex flex-col items-center gap-4">
-            <div className="flex items-center gap-2 text-[#0066FF] font-bold text-sm">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-                Investimento
+        {/* Header da Dobra (Frame 3) */}
+        <div className="flex flex-col items-center text-center gap-5 mb-[60px] max-w-[570px]">
+          <div>
+            <div className="flex items-center justify-center gap-2.5 text-[#004DFF] mb-2 font-medium text-[16px]">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              Investimento
             </div>
-            <h2 className="text-[40px] md:text-[56px] font-black text-[#1a1a1a] leading-tight tracking-tight">
+            
+            <h2 className="text-[40px] font-bold text-[#111] leading-[46px] tracking-[-0.03em] mb-4">
               Comece agora mesmo
             </h2>
-            <p className="text-[#4a5568] text-[18px] md:text-[20px] font-medium leading-relaxed max-w-[700px]">
-               Experimente gratuitamente por 1 mês ou assine nosso plano empresarial
+            <p className="text-[#111] opacity-70 text-[18px] font-semibold leading-[150%]">
+              Experimente gratuitamente por 1 mês ou assine nosso plano empresarial
             </p>
-          </ScrollAnimation>
+          </div>
+        </div>
 
-          {/* Pricing Grid */}
-          <div className="grid md:grid-cols-3 gap-8 w-full items-stretch">
-            {plans.map((plan, index) => (
-              <ScrollAnimation 
-                key={index} 
-                delay={index * 0.1} 
-                className={`flex flex-col rounded-[32px] p-8 transition-all duration-300 relative ${
-                  plan.highlight 
-                  ? 'bg-white border-[3px] border-[#004DFF] shadow-2xl shadow-blue-100 scale-105 z-10' 
-                  : 'bg-[#EEF2FF] border border-[#E0E9FE] hover:shadow-xl'
-                }`}
+        {/* Pricing Grid (Group 65) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-[23.76px] w-full max-w-[1110px] items-start">
+          {plans.map((plan, index) => (
+            <div key={index}>
+              <div 
+                className={`flex flex-col justify-between p-5 h-auto min-h-[454px] rounded-[20px] transition-all relative
+                  ${plan.highlight 
+                    ? 'bg-gradient-to-b from-[#E1E9FE] to-[#F8F8FE] border-[3px] border-[#004DFF]' 
+                    : 'bg-gradient-to-b from-[#E1E9FE] to-[#F8F8FE] border border-white/20'
+                  }`}
+                style={{ backdropFilter: 'blur(5.67px)' }}
               >
-                {/* Badge Tag */}
-                <div className="flex justify-between items-start mb-8">
-                  <span className={`px-4 py-2 rounded-full text-sm font-bold ${
-                    plan.highlight ? 'bg-[#004DFF] text-white' : 'bg-white text-[#1a1a1a]'
-                  }`}>
-                    {plan.name === "Empresarial" ? 'Empresarial' : plan.name}
-                  </span>
-                  <span className="text-[10px] font-bold text-[#1a1a1a]/60 text-right max-w-[100px]">
-                    {plan.validity}
-                  </span>
-                </div>
+                {/* Top Section: Badges and Price */}
+                <div className="flex flex-col gap-[13.73px]">
+                  <div className="flex justify-between items-start w-full">
+                    <span className={`px-[13.7px] py-[6.8px] rounded-[31.5px] text-[20px] font-medium tracking-tight
+                      ${plan.highlight ? 'bg-[#004DFF] text-white' : plan.name === 'Empresarial' ? 'bg-[#262626] text-white' : 'bg-[#F8F8FE] text-[#262626]'}`}>
+                      {plan.name}
+                    </span>
+                    <span className="text-[13.7px] font-bold text-[#111] text-right max-w-[137px] leading-none">
+                      {plan.validity}
+                    </span>
+                  </div>
 
-                {/* Price */}
-                <div className="mb-10">
-                  {plan.price === "Sob consulta" ? (
-                    <div className="text-[42px] font-black text-[#1a1a1a] leading-tight mt-4">
-                      {plan.price}
-                    </div>
-                  ) : (
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-xl font-bold text-[#1a1a1a]">R$</span>
-                      <span className="text-[64px] font-black text-[#1a1a1a] leading-none tracking-tighter">
+                  <div className="flex items-end gap-1.5 h-[52px]">
+                    {plan.price === "Sob consulta" ? (
+                      <span className="text-[42px] font-semibold tracking-tight text-[#111]">
                         {plan.price}
                       </span>
-                      {plan.priceSub ? (
-                         <div className="text-[12px] font-bold text-[#4a5568] ml-2 leading-tight">
-                            {plan.priceSub}
-                         </div>
-                      ) : (
-                        <span className="text-sm font-bold text-[#4a5568] ml-2">/Por mês</span>
-                      )}
-                    </div>
-                  )}
+                    ) : (
+                      <>
+                        <span className="text-[20.5px] font-semibold mb-2">R$</span>
+                        <span className="text-[54.9px] font-semibold leading-none tracking-tight">
+                          {plan.price}
+                        </span>
+                        <span className="text-[14.2px] font-medium mb-1 opacity-70 whitespace-nowrap">
+                          {plan.priceSub || "/Por mês"}
+                        </span>
+                      </>
+                    )}
+                  </div>
                 </div>
 
-                {/* Features */}
-                <div className="flex flex-col gap-4 mb-10 flex-grow">
+                {/* Features Section */}
+                <div className="flex flex-col gap-1.5 mt-6 mb-8">
                   {plan.features.map((feature, fIndex) => (
                     <div key={fIndex} className="flex items-start gap-3">
-                      <div className="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#004DFF" strokeWidth="4"><path d="M20 6L9 17 4 12" /></svg>
+                      <div className="w-[19px] h-[19px] mt-0.5 flex-shrink-0">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#004DFF" strokeWidth="3" strokeLinecap="round">
+                          <path d="M20 6L9 17 4 12" />
+                        </svg>
                       </div>
-                      <span className="text-sm text-[#4a5568] font-medium leading-relaxed">{feature}</span>
+                      <span className="text-[18px] font-semibold text-[#111] leading-[20px] tracking-tight">
+                        {feature}
+                      </span>
                     </div>
                   ))}
                 </div>
 
-                {/* CTA */}
-                <button className={`w-full py-4 rounded-full font-bold text-lg flex items-center justify-center gap-3 transition-all ${
-                  plan.highlight 
-                  ? 'bg-[#004DFF] text-white hover:bg-[#0044CC]' 
-                  : 'bg-[#0055FF] text-white hover:bg-[#0044CC]'
-                }`}>
+                {/* CTA Button */}
+                <button className="w-full h-[56px] bg-[#004DFF] text-[#F8F8FE] rounded-[90px] font-medium text-[16px] flex items-center justify-center gap-2.5 transition-transform active:scale-95">
                   Fale Conosco
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
                 </button>
-              </ScrollAnimation>
-            ))}
-          </div>
-
+              </div>
+            </div>
+          ))}
         </div>
-
       </div>
     </section>
   );

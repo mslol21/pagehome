@@ -1,10 +1,9 @@
 import Link from 'next/link';
-import ScrollAnimation from '../ui/ScrollAnimation';
 
 export default function CTAComparison() {
   return (
     <section className="bg-[#F8F8FE] pt-[80px] pb-[60px] flex justify-center px-5" id="contato-comparacao">
-      <ScrollAnimation className="w-full max-w-[1244px] h-auto md:h-[579px] bg-[#E1E9FE] rounded-[40px] relative overflow-hidden flex items-center shadow-2xl">
+      <div>
         
         {/* Content Container */}
         <div className="w-full md:w-1/2 px-10 md:pl-[80px] py-10 z-10 text-black">
@@ -70,7 +69,7 @@ export default function CTAComparison() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-white/[0.05] rounded-full blur-[100px] -z-10" />
         </div>
 
-      </ScrollAnimation>
+      </div>
     </section>
   );
 }

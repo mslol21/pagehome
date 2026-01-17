@@ -1,8 +1,8 @@
 import Header from "@/components/layout/Header";
 import Hero from "@/components/home/Hero";
+import TransformFeatures from "@/components/home/TransformFeatures";
 import Institutional from "@/components/home/Institutional";
 import Services from "@/components/home/Services";
-import Differentials from "@/components/home/Differentials";
 import Features from "@/components/home/Features";
 import Comparison from "@/components/home/Comparison";
 import Pricing from "@/components/home/Pricing";
@@ -15,8 +15,8 @@ export default function Home() {
     <main className="flex flex-col w-full min-h-screen">
       <Header />
       <Hero />
+      <TransformFeatures />
       <Features />
-      <Differentials />
       <Services />
       <Institutional />
       <Comparison />

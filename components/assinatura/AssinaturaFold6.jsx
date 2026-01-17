@@ -1,8 +1,8 @@
-"use client";
-import { useState } from 'react';
-import ScrollAnimation from '../ui/ScrollAnimation';
+'use client';
 
-export default function AssinaturaFold6() {
+import { useState } from 'react';
+
+export default function AssinaturaFold7() {
   const [openIndex, setOpenIndex] = useState(0);
 
   const faqs = [
@@ -33,64 +33,78 @@ export default function AssinaturaFold6() {
   ];
 
   return (
-    <section className="bg-[#F8F8FE] py-[60px] flex justify-center w-full min-h-[801px]" id="faq">
-      <div className="max-w-[1244px] w-full px-[48px] flex justify-center">
+    <section className="bg-[#F8F8FE] py-[60px] flex justify-center w-full" id="faq">
+      <div className="max-w-[1400px] w-full px-6 lg:px-[48px]">
         
-        {/* Frame Interno (1102x681px) */}
-        <div className="w-full max-w-[1102px] h-auto md:h-[681px] flex flex-col md:flex-row justify-between items-start gap-12 md:gap-0">
+        {/* Grid 50/50: Texto fixo à esquerda | Cards accordion à direita */}
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-[60px] items-start">
           
-          {/* Left Column: Title Block */}
-          <div className="w-full md:max-w-[420px] pt-10">
-            <ScrollAnimation className="flex flex-col gap-5">
-              <div className="inline-flex items-center gap-2 text-[#0066FF] font-bold text-sm">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.48 2 12C2 17.5 6.5 22 12 22Z"/>
-                  <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>
-                </svg>
+          {/* LADO ESQUERDO: Texto Fixo (Sticky) */}
+          <div className="flex flex-col gap-5 pt-10">
+            <div>
+              {/* Badge */}
+              <div className="flex items-center gap-[10px] text-[#004DFF] mb-6 font-medium text-[16px]">
+                <div className="w-5 h-5 rounded-full border-2 border-[#004DFF] flex items-center justify-center">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4">
+                    <path d="M20 6L9 17 4 12"/>
+                  </svg>
+                </div>
                 FAQ
               </div>
-              <h2 className="text-[40px] md:text-[56px] font-black text-[#1a1a1a] leading-[1.1]">
-                Perguntas Frequentes
-              </h2>
-              <p className="text-[#4a5568] text-lg max-w-[340px] leading-relaxed">
-                Respostas para as dúvidas mais comuns sobre o Holerite Digital.
-              </p>
-            </ScrollAnimation>
+
+              {/* Título e Descrição */}
+              <div className="flex flex-col gap-5">
+                <h2 className="text-[40px] font-bold text-[#111] leading-[46px] tracking-[-0.03em]">
+                  Perguntas Frequentes
+                </h2>
+                <p className="text-[#111] opacity-70 text-[18px] font-semibold leading-[150%] max-w-[420px]">
+                  Respostas para as dúvidas mais comuns sobre o Holerite Digital.
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* Right Column: Accordion */}
-          <div className="w-full md:max-w-[610px] flex flex-col gap-4 overflow-y-auto pr-2 custom-scrollbar">
+          {/* LADO DIREITO: Cards Accordion com Hover */}
+          <div className="flex flex-col gap-4">
             {faqs.map((faq, index) => (
-              <ScrollAnimation key={index} delay={index * 0.05} className="w-full">
-                <div 
-                  className={`border-b border-gray-100 transition-all duration-300 ${openIndex === index ? 'bg-white rounded-2xl p-6 shadow-sm mb-4 border-none' : 'py-5 cursor-pointer hover:pl-2'}`}
-                  onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
-                >
-                  <div className="flex justify-between items-center gap-4">
-                    <h3 className={`text-[17px] font-bold tracking-tight transition-colors ${openIndex === index ? 'text-[#004DFF]' : 'text-[#1a1a1a]'}`}>
-                      {faq.question}
-                    </h3>
-                    <div className={`flex-shrink-0 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}>
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={openIndex === index ? "#004DFF" : "#1a1a1a"} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="6 9 12 15 18 9"/>
-                      </svg>
-                    </div>
+              <div 
+                key={index}
+                className={`bg-white rounded-[20px] transition-all duration-300 ${
+                  openIndex === index 
+                    ? 'border-[#004DFF] border-2 shadow-lg p-6' 
+                    : 'border border-gray-100 hover:border-[#004DFF] hover:shadow-md hover:scale-[1.02] p-6'
+                }`}
+                onMouseEnter={() => setOpenIndex(index)}
+                onMouseLeave={() => setOpenIndex(-1)}
+              >
+                <div className="flex justify-between items-center gap-5">
+                  {/* Pergunta */}
+                  <h4 className={`text-[20px] font-semibold leading-[24px] tracking-[-0.03em] flex-1 transition-colors ${
+                    openIndex === index ? 'text-[#004DFF]' : 'text-[#111]'
+                  }`}>
+                    {faq.question}
+                  </h4>
+                  {/* Chevron Icon */}
+                  <div className={`transition-transform duration-300 flex-shrink-0 ${openIndex === index ? 'rotate-180' : ''}`}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={openIndex === index ? "#004DFF" : "#111"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="6 9 12 15 18 9"/>
+                    </svg>
                   </div>
-                  
-                  {openIndex === index && (
-                    <div className="mt-4 animate-in fade-in slide-in-from-top-2 duration-300">
-                      <p className="text-[#4a5568] text-[15px] leading-relaxed font-medium">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  )}
                 </div>
-              </ScrollAnimation>
+
+                {/* Resposta (aparece ao fazer hover) */}
+                {openIndex === index && (
+                  <div className="mt-4 animate-in fade-in slide-in-from-top-2 duration-300">
+                    <p className="text-[#111] opacity-70 text-[18px] font-semibold leading-[150%]">
+                      {faq.answer}
+                    </p>
+                  </div>
+                )}
+              </div>
             ))}
           </div>
 
         </div>
-
       </div>
     </section>
   );

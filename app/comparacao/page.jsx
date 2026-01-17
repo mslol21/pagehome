@@ -1,6 +1,6 @@
 import Header from "@/components/layout/Header";
 import HeroComparison from "@/components/comparacao/HeroComparison";
-import Comparison from "@/components/home/Comparison";
+import TimeImpact from "@/components/comparacao/TimeImpact";
 import DetailedComparison from "@/components/comparacao/DetailedComparison";
 import TimeBarComparison from "@/components/comparacao/TimeBarComparison";
 import ExtraTimeBenefits from "@/components/comparacao/ExtraTimeBenefits";
@@ -21,7 +21,7 @@ export default function ComparacaoPage() {
     <main className="flex flex-col w-full min-h-screen">
       <Header />
       <HeroComparison />
-      <Comparison />
+      <TimeImpact />
       <DetailedComparison />
       <TimeBarComparison />
       <ExtraTimeBenefits />

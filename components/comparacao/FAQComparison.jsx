@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import ScrollAnimation from '../ui/ScrollAnimation';
 
 export default function FAQComparison() {
   const [openIndex, setOpenIndex] = useState(0);
@@ -38,54 +37,61 @@ export default function FAQComparison() {
   ];
 
   return (
-    <section className="flex justify-center w-full bg-[#F8F8FE] py-[60px]" id="faq-comparacao">
-      <div className="w-[1200px] min-h-[801px] relative flex flex-col md:flex-row px-[49px]">
+    // Dobra 9 - Container Mestre (Fundo #F8F8FE)
+    <section className="flex justify-center w-full bg-[#F8F8FE] py-[60px] px-[48px] min-h-[801px]" id="faq">
+      <div className="w-full max-w-[1102px] flex flex-col md:flex-row justify-between items-start gap-[60px]">
         
-        {/* Column 1: Title Block */}
-        <div className="w-full md:w-[475px] h-auto md:h-[158px] mt-[10px] md:mt-[10px] flex flex-col gap-[20px] z-10">
-          <ScrollAnimation>
-            <div className="inline-flex items-center gap-2 text-[#0066FF] font-black text-sm uppercase tracking-wider">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z" fill="currentColor"/>
-              </svg>
-              FAQ
-            </div>
-            <h2 className="text-[44px] md:text-[56px] font-black text-[#1a1a1a] leading-[1.1] tracking-tight mt-2">
-              Perguntas Frequentes
-            </h2>
-            <p className="text-[#4a5568] text-[20px] font-medium leading-tight mt-4 opacity-80">
-              Respostas para as dúvidas mais comuns sobre o Holerite Digital.
-            </p>
-          </ScrollAnimation>
+        {/* Frame 3 - Bloco de Título (Lado Esquerdo) */}
+        <div className="w-full md:w-[475px] flex flex-col gap-[20px]">
+          <div className="flex items-center gap-[10px] text-[#004DFF]">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+               <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+               <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <span className="text-[16px] font-medium tracking-[-0.03em]">FAQ</span>
+          </div>
+          <h2 className="text-[40px] font-bold leading-[46px] tracking-[-0.03em] text-[#111]">
+            Perguntas Frequentes
+          </h2>
+          <p className="text-[18px] font-semibold opacity-70 text-[#111] leading-[150%] max-w-[343px]">
+            Respostas para as dúvidas mais comuns sobre o Holerite Digital.
+          </p>
         </div>
 
-        {/* Column 2: FAQ Block */}
-        <div className="w-full md:w-[610px] h-auto md:h-[681px] mt-[40px] md:mt-0 md:ml-[17px] flex flex-col gap-[20px] z-10">
+        {/* Frame 63 - Bloco do Acordeão (Lado Direito) */}
+        <div className="w-full md:w-[610px] flex flex-col gap-[20px]">
           {faqs.map((faq, index) => (
-             <ScrollAnimation key={index} delay={0.1 * index} className="w-full">
+             <div 
+               key={index} 
+               className="w-full"
+               onMouseEnter={() => setOpenIndex(index)}
+               onMouseLeave={() => setOpenIndex(-1)}
+             >
                <div 
-                 className={`group cursor-pointer transition-all duration-300 border-b border-gray-100 pb-6`}
+                 className={`bg-white rounded-[20px] p-[24px] cursor-pointer transition-all duration-300 shadow-sm hover:shadow-md ${openIndex === index ? 'shadow-blue-100' : ''}`}
                  onClick={() => toggleAccordion(index)}
                >
-                 <div className="flex justify-between items-center gap-4">
-                   <h3 className={`font-bold text-[19px] md:text-[22px] tracking-tight ${openIndex === index ? 'text-[#0055FF]' : 'text-[#1a1a1a]'}`}>
+                 <div className="flex justify-between items-center w-full gap-[20px]">
+                   <h4 className="text-[20px] md:text-[24px] font-semibold text-[#111] tracking-[-0.03em] leading-tight">
                      {faq.question}
-                   </h3>
-                   <div className={`w-8 h-8 flex items-center justify-center transition-transform duration-300 flex-shrink-0 ${openIndex === index ? 'text-[#0055FF] rotate-180' : 'text-[#0055FF]'}`}>
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                   </h4>
+                   <div className={`w-8 h-8 flex items-center justify-center transition-transform duration-300 flex-shrink-0 ${openIndex === index ? 'rotate-180' : ''}`}>
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#004DFF" strokeWidth="2">
                         <path d="M6 9l6 6 6-6"/>
                       </svg>
                    </div>
                  </div>
-                 <div className={`grid transition-all duration-300 ease-in-out ${openIndex === index ? 'grid-rows-[1fr] opacity-100 mt-4' : 'grid-rows-[0fr] opacity-0 mt-0'}`}>
+                 
+                 {/* Conteúdo da Resposta */}
+                 <div className={`grid transition-all duration-300 ease-in-out ${openIndex === index ? 'grid-rows-[1fr] opacity-100 mt-[20px]' : 'grid-rows-[0fr] opacity-0'}`}>
                     <div className="overflow-hidden">
-                       <p className="text-[#4a5568] leading-relaxed text-[17px] font-medium pr-8">
+                       <p className="text-[18px] font-semibold text-[#111] opacity-70 leading-[150%]">
                          {faq.answer}
                        </p>
                     </div>
                  </div>
                </div>
-             </ScrollAnimation>
+             </div>
           ))}
         </div>
 

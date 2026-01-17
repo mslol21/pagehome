@@ -1,167 +1,133 @@
+'use client';
+
 import Link from 'next/link';
 import ScrollAnimation from '../ui/ScrollAnimation';
 
 export default function HeroComparison() {
   return (
-    <section className="flex justify-center px-5 py-[40px] bg-[#F8F8FE]" id="hero-comparacao">
-      <ScrollAnimation className="max-w-[1244px] w-full bg-[#0055FF] rounded-[40px] px-[24px] md:px-[48px] pt-[60px] pb-0 flex flex-col items-center text-center relative overflow-hidden h-[672px]">
+    // Container Principal centralizado com limite de 1400px
+    <section className="w-full flex justify-center bg-[#F8F8FE] py-[20px]" id="home">
+      <div className="w-full max-w-[1400px] flex justify-center px-6">
         
-        {/* Top Badge */}
-        <div className="inline-flex items-center gap-2 text-white/90 font-medium mb-8 text-sm md:text-base">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z" fill="white"/>
-          </svg>
-          Sem integrações - Pronto para uso - Seguro
-        </div>
+        {/* Frame 6 - Área Azul Corrigida (1104x632px) */}
+        <ScrollAnimation className="relative w-full max-w-[1104px] h-[632px] bg-[#004DFF] rounded-[20px] overflow-hidden flex flex-col items-center pt-[60px] px-[48px] opacity-100">
+          
+          {/* Frame 3 - Conteúdo de Texto e Botões */}
+          <div className="z-10 flex flex-col items-center text-center gap-[20px] max-w-[967px]">
+            
+            {/* Badge Superior */}
+            <div className="flex flex-row justify-center items-center gap-[10px] h-[18px] text-[#E0E9FE]">
+               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+               </svg>
+               <span className="text-[16px] font-medium tracking-[-0.03em]">Sem integrações - Pronto para uso - Seguro</span>
+            </div>
 
-        {/* Hero Text */}
-        <h1 className="text-[36px] md:text-[64px] font-bold leading-[1.1] text-white mb-6 tracking-tight max-w-[900px]">
-          Recupere 20 horas de produtividade por mês
-        </h1>
-        
-        <p className="text-white/80 text-lg md:text-xl mb-10 max-w-[800px] leading-relaxed">
-          O tempo que sua equipe de RH perde com a entrega manual de holerites pode (e deve!) ser investido em atividades estratégicas. Descubra como automatizar esse processo.
-        </p>
-        
-        {/* Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-16 z-10">
-          <Link
-            href="#contato"
-            className="h-[56px] px-8 rounded-full bg-[#1a1a1a] text-white font-bold flex items-center gap-2 hover:bg-black transition-all group"
+            {/* H1 e Descrição */}
+            <div className="flex flex-col gap-[20px] items-center">
+              <h1 className="text-[48px] font-bold leading-[55px] tracking-[-0.03em] text-[#F8F8FE] whitespace-nowrap">
+                Recupere 20 horas de produtividade por mês
+              </h1>
+              <p className="text-[18px] font-semibold leading-[150%] text-[#F8F8FE] opacity-70 max-w-[800px]">
+                O tempo que sua equipe de RH perde com a entrega manual de holerites pode (e deve!) ser investido em atividades estratégicas.
+              </p>
+            </div>
+
+            {/* Botões CTA */}
+            <div className="flex flex-row items-center gap-[10px] mt-4">
+              <Link
+                href="#contato"
+                className="h-[56px] px-[32px] rounded-[90px] bg-[#262626] text-[#F8F8FE] text-[16px] font-medium flex items-center gap-[10px] hover:bg-black transition-all group"
+              >
+                Falar com Especialista
+                <svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 11L11 1M11 1H3.5M11 1V8.5"/></svg>
+              </Link>
+              
+              <Link
+                href="#como-funciona"
+                className="h-[56px] px-[32px] rounded-[90px] bg-transparent border-2 border-[#F8F8FE] text-[#F8F8FE] text-[16px] font-medium flex items-center gap-[10px] hover:bg-white/10 transition-all"
+              >
+                Como Funciona
+                <svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 11L11 1M11 1H3.5M11 1V8.5"/></svg>
+              </Link>
+            </div>
+          </div>
+
+          {/* MacBook Mockup com Dashboard dentro - Posicionado para vazar na parte inferior */}
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[946px] z-0">
+            {/* Imagem do Dashboard dentro da tela do MacBook */}
+            <div className="absolute top-[3%] left-[13.5%] w-[73%] h-[76%] overflow-hidden">
+              <img 
+                src="/dashboard-background.png" 
+                alt="Dashboard Background" 
+                className="w-full h-full object-cover object-left-top"
+              />
+            </div>
+            
+            {/* Moldura do MacBook por cima */}
+            <img 
+              src="/dashboard-background.png" 
+              alt="MacBook Frame" 
+              className="relative w-full h-auto drop-shadow-2xl z-10"
+            />
+          </div>
+
+          {/* Card de Assinatura flutuando à esquerda */}
+          <ScrollAnimation 
+            delay={0.3}
+            className="absolute left-[50px] bottom-[180px] w-[200px] bg-[#F8F8FE] rounded-[11.85px] p-[12px] shadow-[0px_9.4px_18.9px_rgba(28,89,243,0.19)] z-20 flex flex-col gap-[6px]"
           >
-            Falar com Especialista
-            <svg width="14" height="14" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"><path d="M1 11L11 1M11 1H3.5M11 1V8.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          </Link>
-          <Link
-            href="#como-funciona"
-            className="h-[56px] px-8 rounded-full bg-transparent border-2 border-white text-white font-bold flex items-center gap-2 hover:bg-white/10 transition-all group"
-          >
-            Como Funciona
-            <svg width="14" height="14" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"><path d="M1 11L11 1M11 1H3.5M11 1V8.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          </Link>
-        </div>
+              <div className="flex items-center gap-1.5">
+                <div className="w-[16px] h-[16px] bg-[#DBE9FE] rounded-[4px] flex items-center justify-center">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#004DFF" strokeWidth="2.5"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                </div>
+                <span className="text-[8.5px] font-bold text-[#111]">Assinar Documento</span>
+              </div>
+              <div className="w-full h-[56px] border border-black/10 rounded-lg flex items-center justify-center bg-white">
+                <img src="/assinatura-rubrica.png" alt="Signature" className="w-[60px]" />
+              </div> 
+              <div className="flex gap-1.5">
+                <div className="flex-1 h-[24px] bg-[#E0E9FE] rounded-[6px] text-[8.5px] font-bold flex items-center justify-center text-[#111]">Limpar</div>
+                <div className="flex-1 h-[24px] bg-[#004DFF] rounded-[6px] text-[8.5px] font-bold flex items-center justify-center text-white">Assinar</div>
+              </div>
+            </ScrollAnimation>
 
-        {/* Platform Mockup */}
-        <div className="w-full max-w-[1000px] mt-auto relative">
-          {/* Main Dashboard Window */}
-          <div className="bg-white rounded-t-3xl shadow-2xl border-x border-t border-gray-200 overflow-hidden mx-4 md:mx-auto">
-             {/* Brower/Platform Header */}
-             <div className="bg-gray-50 border-b border-gray-200 p-4 flex items-center justify-between">
-                <div className="flex items-center gap-6">
-                   <div className="text-[10px] font-bold text-gray-400">Detalhes da competência</div>
+            {/* Card de Engajamento flutuando à direita */}
+            <ScrollAnimation 
+              delay={0.5}
+              className="absolute right-[50px] bottom-[120px] w-[200px] bg-[#F8F8FE] rounded-[10.6px] p-[18px] shadow-[0px_8.5px_17px_rgba(28,89,243,0.19)] z-20 flex flex-col gap-[6px]"
+            >
+              <div className="flex items-center gap-1.5 mb-1">
+                <div className="w-[14px] h-[14px] bg-[#DBE9FE] rounded-[3.7px] flex items-center justify-center">
+                  <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#004DFF" strokeWidth="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                 </div>
-                <div className="flex items-center gap-2">
-                   <div className="w-2 h-2 rounded-full bg-gray-300" />
-                   <div className="w-2 h-2 rounded-full bg-gray-300" />
-                   <div className="w-8 h-2 rounded-full bg-gray-300" />
-                </div>
-             </div>
-             
-             {/* Platform Content */}
-             <div className="p-6 md:p-10 text-left">
-                <div className="flex justify-between items-start mb-8">
-                   <div>
-                      <h4 className="text-xl font-bold text-[#1a1a1a] mb-2">Detalhes da competência</h4>
-                      <div className="flex gap-8 text-[11px] text-gray-500 uppercase font-bold">
-                         <div>Competência: <span className="text-gray-900">2025-11</span></div>
-                         <div>Data de Importação: <span className="text-gray-900">16/08/2025</span></div>
-                      </div>
-                   </div>
-                   <div className="flex gap-8 text-[11px] text-gray-500 uppercase font-bold text-right">
-                      <div>Tipo de Documento: <span className="text-gray-900">Folha Mensal</span></div>
-                      <div className="flex items-center gap-2">Status: <span className="bg-green-100 text-green-600 px-2 py-0.5 rounded-full text-[9px]">ENVIADO</span></div>
-                   </div>
-                </div>
+                <span className="text-[7.5px] font-bold text-[#111]">Engajamento com Documentos</span>
+              </div>
+              
+              <div className="flex flex-col gap-1">
+                 <div className="flex justify-between text-[7px] font-bold">
+                   <span className="text-gray-500">Taxa de visualização</span>
+                   <span className="text-[#004DFF]">76%</span>
+                 </div>
+                 <div className="h-1.5 w-full bg-[#E0E9FE] rounded-full overflow-hidden">
+                   <div className="bg-[#004DFF] h-full w-[76%]" />
+                 </div>
+              </div>
 
-                {/* Table Mockup */}
-                <div className="border-t border-gray-100 pt-6">
-                   <div className="flex items-center justify-between mb-4">
-                      <h5 className="font-bold text-gray-900 text-sm">Holerites</h5>
-                   </div>
-                   <div className="space-y-4">
-                      {/* Table Header */}
-                      <div className="grid grid-cols-5 text-[10px] font-bold text-gray-400 uppercase pb-2 border-b border-gray-50">
-                         <span>Código</span>
-                         <span>Colaborador</span>
-                         <span>Status</span>
-                         <span>Visualizado em</span>
-                         <span>Assinado</span>
-                      </div>
-                      {/* Table Rows */}
-                      {[
-                        { id: '13', name: 'RITA FELISBINA', status: 'Enviado', date: '-', sign: true },
-                        { id: '21', name: 'ROGERIA DA SILVA', status: 'Enviado', date: '13/08/2025 às 09:52', sign: true },
-                        { id: '22', name: 'MATHEUS DA COSTA', status: 'Enviado', date: '13/08/2025 às 09:46', sign: true },
-                      ].map((row, i) => (
-                        <div key={i} className="grid grid-cols-5 text-[11px] py-1 items-center border-b border-gray-50 last:border-0">
-                           <span className="text-gray-500 font-medium">0{row.id}</span>
-                           <span className="text-gray-900 font-bold">{row.name}</span>
-                           <span><span className="bg-green-100 text-green-600 px-2 py-0.5 rounded-full text-[9px]">Enviado</span></span>
-                           <span className="text-gray-500">{row.date}</span>
-                           <span className="text-green-500 font-bold">✓</span>
-                        </div>
-                      ))}
-                   </div>
-                </div>
-             </div>
-          </div>
+              <div className="flex flex-col gap-1 mt-1">
+                 <div className="flex justify-between text-[7px] font-bold">
+                   <span className="text-gray-500">Taxa de assinatura</span>
+                   <span className="text-[#16A349]">60%</span>
+                 </div>
+                 <div className="h-1.5 w-full bg-[#E0E9FE] rounded-full overflow-hidden">
+                   <div className="bg-[#16A349] h-full w-[60%]" />
+                 </div>
+              </div>
+            </ScrollAnimation>
 
-          {/* Left Floating Modal - Signature */}
-          <div className="absolute top-[10%] -left-4 md:-left-12 w-[180px] md:w-[260px] bg-white rounded-2xl shadow-2xl border border-gray-100 p-4 z-20 hidden sm:block transform -rotate-1">
-             <div className="flex items-center gap-2 mb-4">
-                <div className="w-5 h-5 bg-blue-100 rounded flex items-center justify-center">
-                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="text-blue-600"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                </div>
-                <span className="text-[10px] font-bold text-gray-900">Assinar Documento</span>
-             </div>
-             <div className="h-24 bg-gray-50 rounded-xl border border-dashed border-gray-200 flex items-center justify-center mb-4 relative">
-                <svg width="100" height="40" viewBox="0 0 100 40" className="text-gray-900 opacity-80">
-                   <path d="M10 25 C 20 15, 30 35, 45 20 S 70 15, 85 25" stroke="currentColor" strokeWidth="2" fill="none" />
-                </svg>
-             </div>
-             <div className="grid grid-cols-2 gap-2">
-                <div className="bg-blue-50 text-blue-600 text-[10px] font-bold py-2 rounded-lg text-center cursor-pointer">Limpar</div>
-                <div className="bg-blue-600 text-white text-[10px] font-bold py-2 rounded-lg text-center cursor-pointer">Assinar</div>
-             </div>
-          </div>
-
-          {/* Right Floating Card - Engagement */}
-          <div className="absolute top-[40%] -right-4 md:-right-12 w-[220px] md:w-[300px] bg-white rounded-2xl shadow-2xl border border-gray-100 p-6 z-20 hidden sm:block transform rotate-1">
-             <div className="text-[11px] font-bold text-gray-900 mb-6 flex items-center gap-2">
-                <div className="w-5 h-5 bg-blue-50 rounded-full flex items-center justify-center">
-                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="text-[#0055FF]"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                </div>
-                Engajamento com Documentos
-             </div>
-             <div className="space-y-6">
-                <div>
-                   <div className="flex justify-between text-[10px] font-bold mb-2">
-                      <span className="text-gray-500 uppercase">Taxa de visualização</span>
-                      <span className="text-[#0055FF]">76%</span>
-                   </div>
-                   <div className="h-1.5 w-full bg-gray-100 rounded-full overflow-hidden">
-                      <div className="h-full bg-[#0055FF] w-[76%]" />
-                   </div>
-                   <div className="text-[9px] text-gray-400 mt-1">60 de 78 funcionários visualizaram</div>
-                </div>
-                <div>
-                   <div className="flex justify-between text-[10px] font-bold mb-2">
-                      <span className="text-gray-500 uppercase">Taxa de assinatura</span>
-                      <span className="text-green-500">60%</span>
-                   </div>
-                   <div className="h-1.5 w-full bg-gray-100 rounded-full overflow-hidden">
-                      <div className="h-full bg-green-500 w-[60%]" />
-                   </div>
-                   <div className="text-[9px] text-gray-400 mt-1">48 de 78 funcionários assinaram</div>
-                </div>
-             </div>
-          </div>
-        </div>
-
-        {/* Decorative elements */}
-        <div className="absolute -top-20 -left-20 w-64 h-64 bg-white/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-black/10 rounded-full blur-3xl pointer-events-none" />
-      </ScrollAnimation>
+        </ScrollAnimation>
+      </div>
     </section>
   );
 }
