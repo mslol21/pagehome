@@ -157,6 +157,112 @@ export default function Header() {
           </button>
         </div>
       </div>
-    </header>
+      
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-lg py-6 px-6 flex flex-col gap-6 h-[calc(100vh-80px)] overflow-y-auto">
+          <nav className="flex flex-col gap-4">
+            <Link
+              href="/"
+              className="text-[#111] font-medium hover:text-[#004DFF] text-[18px]"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Home
+            </Link>
+            <Link
+              href="#como-funciona"
+              className="text-[#111] font-medium hover:text-[#004DFF] text-[18px]"
+              onClick={(e) => {
+                e.preventDefault();
+                setMobileMenuOpen(false);
+                document.getElementById('como-funciona')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              Como Funciona
+            </Link>
+            <Link
+              href="#beneficios"
+              className="text-[#111] font-medium hover:text-[#004DFF] text-[18px]"
+              onClick={(e) => {
+                e.preventDefault();
+                setMobileMenuOpen(false);
+                document.getElementById('beneficios')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              Benefícios
+            </Link>
+            <Link
+              href="#investimento"
+              className="text-[#111] font-medium hover:text-[#004DFF] text-[18px]"
+              onClick={(e) => {
+                e.preventDefault();
+                setMobileMenuOpen(false);
+                document.getElementById('investimento')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              Preços
+            </Link>
+            <Link
+              href="#faq"
+              className="text-[#111] font-medium hover:text-[#004DFF] text-[18px]"
+              onClick={(e) => {
+                e.preventDefault();
+                setMobileMenuOpen(false);
+                document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              FAQ
+            </Link>
+            
+            {/* Páginas Extras no Mobile (Flattened) */}
+            <div className="flex flex-col gap-3 pt-2 border-t border-gray-100">
+              <span className="text-gray-400 text-sm font-medium uppercase tracking-wider">Outras Páginas</span>
+              <Link
+                href="/comparacao"
+                className="text-[#111] font-medium hover:text-[#004DFF] text-[18px]"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Comparação de tempo
+              </Link>
+              <Link
+                href="/assinatura"
+                className="text-[#111] font-medium hover:text-[#004DFF] text-[18px]"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Assinatura Digital
+              </Link>
+            </div>
+          </nav>
+
+          {/* Botões Mobile */}
+          <div className="flex flex-col gap-3 mt-4">
+            <Link
+              href="https://wa.me/554831996818"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="h-[48px] px-6 rounded-full font-semibold bg-[#004DFF] text-white hover:bg-[#0052CC] transition-all flex items-center justify-center gap-2 text-[16px]"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Fale Conosco
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </Link>
+            
+            <Link
+              href="#demo"
+              className="h-[48px] px-6 rounded-full font-semibold border-[1.5px] border-[#004DFF] text-[#004DFF] hover:bg-[#f0f7ff] transition-all flex items-center justify-center gap-2 text-[16px]"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Agendar Demo
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </Link>
+          </div>
+        </div>
+      )}
   );
 }
