@@ -62,7 +62,7 @@ export default function TransformFeatures() {
               </div>
 
               {/* Título do Card - Obrigatoriamente em uma única linha */}
-              <h3 className="text-[28px] font-semibold text-[#111] leading-[32px] mb-4 tracking-[-0.03em] whitespace-nowrap">
+              <h3 className="text-[28px] font-semibold text-[#111] leading-[32px] mb-4 tracking-[-0.03em] whitespace-normal md:whitespace-nowrap">
                 {feature.title}
               </h3>
 

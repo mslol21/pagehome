@@ -26,7 +26,7 @@ export default function HeroComparison() {
 
             {/* H1 e Descrição */}
             <div className="flex flex-col gap-[20px] items-center">
-              <h1 className="text-[48px] font-bold leading-[55px] tracking-[-0.03em] text-[#F8F8FE] whitespace-nowrap">
+              <h1 className="text-[48px] font-bold leading-[55px] tracking-[-0.03em] text-[#F8F8FE] whitespace-normal md:whitespace-nowrap">
                 Recupere 20 horas de produtividade por mês
               </h1>
               <p className="text-[18px] font-semibold leading-[150%] text-[#F8F8FE] opacity-70 max-w-[800px]">

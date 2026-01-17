@@ -33,7 +33,7 @@ export default function DetailedComparison() {
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
             <span className="text-[16px] font-medium tracking-tight">Solução</span>
           </div>
-          <h2 className="text-[40px] font-bold leading-[46px] tracking-tight text-[#111] whitespace-nowrap">Aumente a produtividade do seu RH</h2>
+          <h2 className="text-[40px] font-bold leading-[46px] tracking-tight text-[#111] whitespace-normal md:whitespace-nowrap">Aumente a produtividade do seu RH</h2>
           <p className="text-[18px] font-semibold opacity-70 text-[#111]">O Holerite Digital automatiza todo o processo de distribuição, liberando sua equipe para atividades estratégicas.</p>
         </div>
 
@@ -53,7 +53,7 @@ export default function DetailedComparison() {
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#004DFF" strokeWidth="2.4"><path d="M13 2L3 14H12L11 22L21 10H12L13 2Z"/></svg>
                   )}
                 </div>
-                <h3 className="text-[24px] md:text-[28px] font-semibold tracking-tight text-[#111] whitespace-nowrap">{card.title}</h3>
+                <h3 className="text-[24px] md:text-[28px] font-semibold tracking-tight text-[#111] whitespace-normal md:whitespace-nowrap">{card.title}</h3>
               </div>
               <p className="text-[16px] md:text-[18px] font-semibold opacity-70 text-[#111] leading-relaxed">{card.desc}</p>
               <div className="flex flex-col gap-[10px]">
@@ -77,7 +77,7 @@ export default function DetailedComparison() {
           {/* Lado Esquerdo - Texto do Processo */}
           <div className="flex-1 flex flex-col gap-[32px]">
             <div>
-              <h3 className="text-[28px] font-semibold tracking-tight text-[#111] mb-4 whitespace-nowrap">Como funciona o Holerite Digital</h3>
+              <h3 className="text-[28px] font-semibold tracking-tight text-[#111] mb-4 whitespace-normal md:whitespace-nowrap">Como funciona o Holerite Digital</h3>
               <p className="text-[18px] font-semibold opacity-70 text-[#111]">Um processo simples de 3 passos que revoluciona a distribuição de holerites na sua empresa.</p>
             </div>
             <div className="flex flex-col gap-[10px]">
@@ -100,7 +100,7 @@ export default function DetailedComparison() {
               <div className="w-[64px] h-[64px] bg-[#F8F8FE] rounded-full flex items-center justify-center shadow-sm">
                 <svg width="43" height="43" viewBox="0 0 24 24" fill="none" stroke="#13980C" strokeWidth="2.4"><path d="M13 2L3 14H12L11 22L21 10H12L13 2Z"/></svg>
               </div>
-              <h2 className="text-[36px] md:text-[40px] font-bold tracking-tight text-[#111] whitespace-nowrap">Tempo Total : 20 minutos</h2>
+              <h2 className="text-[36px] md:text-[40px] font-bold tracking-tight text-[#111] whitespace-normal md:whitespace-nowrap">Tempo Total : 20 minutos</h2>
               <p className="text-[18px] font-semibold opacity-70 text-[#111]">Todo o processo de distribuição de holerites para 250 funcionários.</p>
               <h2 className="text-[40px] font-bold text-[#13980C] tracking-tight leading-none">97,6% mais rápido</h2>
             </div>
